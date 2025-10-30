@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6bxwi512vs5k"]
+[gd_scene load_steps=6 format=3 uid="uid://b6bxwi512vs5k"]
 
 [ext_resource type="Texture2D" uid="uid://dv2ddlsnwka6x" path="res://assets/background.jpg" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://fa1dqfr32y08" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://blttol3fn6lsq" path="res://assets/NPC_wojak_meme.png" id="3_sugp2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jyhfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 
 [node name="main" type="Node2D"]
 
@@ -12,3 +17,15 @@ texture = ExtResource("1_0wfyh")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(575, 284)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(282, 263)
+scale = Vector2(0.6, 0.6)
+physics_material_override = SubResource("PhysicsMaterial_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_sugp2")
