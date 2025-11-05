@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 
+const MINX = 0
+const MINY = 0
+const MAXX = 1000
+const MAXY = 1000
+
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 
@@ -9,6 +14,16 @@ func _physics_process(delta):
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 
 	input_vector = input_vector.normalized()
-	velocity = input_vector * speed
+	
+	if(global_position.x > MAXX):
+		velocity.x = -speed
+	elif(global_position.x < MINX):
+		velocity.x = speed
+	elif(global_position.y > MAXY):
+		velocity.y = -speed
+	elif(global_position.y < MINY):
+		velocity.y = speed
+	else:
+		velocity = input_vector * speed
 
 	move_and_slide()
