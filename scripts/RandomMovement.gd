@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const MAXSPEED = 100
 const MINX = 0 
-const MAXX = 1000
+const MAXX = 1800
 const MINY = 0 
 const MAXY = 1000
 
@@ -20,7 +20,7 @@ func _on_timer_timeout():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(global_position.x > MAXX):
 		velocity.x = -100
 	if(global_position.x < MINX):

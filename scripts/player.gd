@@ -4,10 +4,10 @@ extends CharacterBody2D
 
 const MINX = 0
 const MINY = 0
-const MAXX = 1000
+const MAXX = 1800
 const MAXY = 1000
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
 
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")

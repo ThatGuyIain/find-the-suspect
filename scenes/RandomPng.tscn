@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://djhxv5rw162il"]
 
-[ext_resource type="Texture2D" uid="uid://blttol3fn6lsq" path="res://assets/NPC_wojak_meme.png" id="1_gg0f4"]
+[ext_resource type="Texture2D" uid="uid://chrv25jwoqbaw" path="res://assets/player_model.png" id="2_fctvw"]
 [ext_resource type="Script" uid="uid://b3285p2w28pke" path="res://scripts/RandomMovement.gd" id="2_vekcu"]
 
 [node name="Distraction" type="CharacterBody2D"]
 script = ExtResource("2_vekcu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.5858586, 0.5858586)
-texture = ExtResource("1_gg0f4")
+position = Vector2(0, -0.9999995)
+scale = Vector2(0.3329275, 0.29546866)
+texture = ExtResource("2_fctvw")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
